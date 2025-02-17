@@ -1,0 +1,586 @@
+/* Reset e Configurações Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', Arial, sans-serif;
+}
+
+body {
+    background-color: var(--bg-primary);
+}
+
+/* Variáveis Globais */
+:root {
+    /* Paleta Principal */
+    --primary-color: #6246EA;
+    /* Roxo elegante */
+    --secondary-color: #E2E8F0;
+    /* Cinza suave */
+    --accent-color: #2CB67D;
+    /* Verde suave */
+
+    /* Tons de texto */
+    --text-dark: #2D3748;
+    --text-light: #718096;
+    --text-white: #FFFFFF;
+
+    /* Cores de Background */
+    --bg-primary: #F7FAFC;
+    --bg-secondary: #FFFFFF;
+    --bg-accent: #EDF2F7;
+
+    /* Gradientes */
+    --gradient-primary: linear-gradient(135deg, #6246EA 0%, #9F7AEA 100%);
+    --gradient-secondary: linear-gradient(135deg, #2CB67D 0%, #38B2AC 100%);
+
+    /* Sombras */
+    --shadow-sm: 0 2px 4px rgba(98, 70, 234, 0.1);
+    --shadow-md: 0 4px 6px rgba(98, 70, 234, 0.15);
+    --shadow-lg: 0 10px 15px rgba(98, 70, 234, 0.2);
+}
+
+/* Primeira Seção - Header */
+.header-section {
+    background: var(--gradient-primary);
+    padding: 25px;
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.logo {
+    width: 32px;
+    height: 32px;
+    margin: 0;
+    filter: brightness(0) invert(1);
+    /* Torna a logo branca */
+    object-fit: contain;
+    /* Mantém a proporção da imagem */
+}
+
+.header-title {
+    font-size: 24px;
+    color: var(--white);
+    margin-left: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: 300;
+}
+
+/* Segunda Seção - Main Content */
+.main-content {
+    width: 100%;
+    max-width: 1024px;
+    height: auto;
+    margin: 30px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+/* Área do Formulário */
+.form-area {
+    width: 100%;
+    min-height: 25vh;
+    padding: 8px;
+    position: relative;
+    z-index: 1;
+    border-radius: var(--border-radius);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    /* Mantém a imagem contida */
+}
+
+.form-bkg-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 120%;
+    /* Aumentado para cobrir toda a área */
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.3;
+    border-radius: var(--border-radius);
+}
+
+/* Ajuste do header do formulário */
+.form-header {
+    width: 100%;
+    max-width: 1000px;
+    /* Ajustado para corresponder ao form-content */
+    margin: 0 auto;
+    padding: 12px 20px;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    background: var(--gradient-primary);
+    /* Usando o gradiente definido nas variáveis */
+    box-shadow: var(--shadow-md);
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    position: relative;
+    z-index: 2;
+}
+
+.form-header h2 {
+    color: var(--text-white);
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: 700;
+    order: 1;
+}
+
+.form-header img {
+    width: 20px;
+    height: 20px;
+    transform: rotate(-45deg);
+    transition: transform 0.3s ease;
+    filter: brightness(0) invert(1);
+    /* Torna a imagem branca */
+    order: 2;
+    /* Força a imagem a ficar depois do texto */
+}
+
+/* Opcional: adicionar efeito hover */
+.form-header img:hover {
+    transform: rotate(0deg);
+}
+
+/* Ajuste do container do formulário */
+.form-content {
+    width: 100%;
+    max-width: 1000px;
+    /* Aumentado para 1000px */
+    margin: -8px auto 0;
+    background-color: var(--bg-secondary);
+    padding: 8px;
+    /* Reduzido de 10px para 8px */
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    z-index: 3;
+    /* Aumentado para ficar acima da imagem */
+}
+
+/* Opcional: Para criar um efeito de continuidade */
+.form-header+.form-content {
+    margin-top: -8px;
+    /* Sobrepõe levemente para criar continuidade */
+}
+
+.form-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-content h3 {
+    text-align: center;
+    margin-bottom: 15px;
+    /* Reduzido de 20px para 15px */
+    color: #333;
+    font-size: 1.2em;
+    font-weight: 200;
+}
+
+.form-content input[type="text"],
+.form-content input[type="email"],
+.form-content input[type="tel"],
+.form-content input[type="date"] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.radio-group,
+.checkbox-group {
+    margin: 15px 0;
+}
+
+.radio-group label,
+.checkbox-group label {
+    margin-right: 15px;
+}
+
+button[type="submit"] {
+    background: var(--accent-color);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background: #259d6d;
+    box-shadow: var(--shadow-sm);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 4px;
+    /* Reduzido de 6px para 4px */
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-weight: 300;
+    color: var(--text-dark);
+}
+
+.form-group input {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(98, 70, 234, 0.2);
+}
+
+/* Grupo de campos em linha */
+.form-row {
+    display: flex;
+    gap: 6px;
+    /* Reduzido de 8px para 6px */
+    margin-bottom: 4px;
+    /* Reduzido de 6px para 4px */
+}
+
+.form-row .form-group {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+/* Área de Ofertas */
+.offers-area {
+    width: 100%;
+    max-width: 1024px;
+    height: auto;
+    margin: 32px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px;
+    background: var(--bg-secondary);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+}
+
+.offers-area h2 {
+    color: var(--text-dark);
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: 700;
+    /* Alterado para negrito */
+}
+
+.offers-area h3 {
+    color: var(--text-light);
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.offers-content {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.main-offer {
+    flex: 1;
+    max-width: 50%;
+    margin: 0;
+}
+
+.main-offer figure {
+    margin: 0;
+    height: 100%;
+}
+
+.main-offer img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.secondary-offers {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    flex: 1;
+    max-width: 50%;
+    justify-content: center;
+    margin-top: 0;
+    /* Removida a margem superior */
+}
+
+.secondary-offers figure {
+    margin: 0;
+    width: 100%;
+}
+
+.secondary-offers img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+figcaption {
+    color: var(--text-white);
+    font-size: 16px;
+    padding: 8px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-weight: 300;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+}
+
+figure {
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+}
+
+figure img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* Efeito hover opcional */
+figure:hover img {
+    transform: scale(1.05);
+}
+
+/* Área de Anúncios */
+.ads-area {
+    width: 100%;
+    max-width: 1024px;
+    height: auto;
+    margin: 32px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px;
+    background: var(--bg-secondary);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+}
+
+.ads-area h2 {
+    color: var(--text-dark);
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: 700;
+    /* Alterado para negrito */
+}
+
+.ads-area h3 {
+    color: var(--text-light);
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.ads-container {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.ads-container article {
+    flex: 1;
+    max-width: 50%;
+    margin: 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ads-container img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+    transition: transform 0.3s ease;
+}
+
+.ads-container img:hover {
+    transform: scale(1.05);
+}
+
+.ad-content {
+    padding: 15px;
+    background-color: #ffffff;
+}
+
+/* Media Query para responsividade */
+@media (max-width: 768px) {
+    .ads-container {
+        flex-direction: column;
+    }
+
+    .ads-container article {
+        max-width: 100%;
+    }
+
+    .ads-container img {
+        height: 300px;
+    }
+}
+
+/* Terceira Seção - Footer */
+.footer-section {
+    background: var(--gradient-primary);
+    color: var(--white);
+    padding: 50px 20px;
+    margin-top: 50px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.contact-info,
+.social-media {
+    line-height: 1.6;
+}
+
+.contact-item,
+.social-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.contact-item:hover,
+.social-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateX(5px);
+}
+
+.contact-item img,
+.social-item img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    /* Torna os ícones brancos */
+}
+
+.contact-item p,
+.social-item p {
+    margin: 0;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+.contact-info h3,
+.social-media h3 {
+    font-size: 22px;
+    margin-bottom: 25px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: 300;
+}
+
+/* Títulos */
+h2 {
+    color: var(--text-dark);
+    margin-bottom: 15px;
+    font-weight: 700;
+    /* Alterado de 300 para 700 para ficar em negrito */
+}
+
+h3 {
+    color: var(--text-light);
+    margin-bottom: 20px;
+    font-weight: 200;
+}
+
+/* Ajuste para textos de conteúdo */
+p,
+input,
+button {
+    font-weight: 200;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+
+    .secondary-offers figure {
+        flex: 0 1 100%;
+    }
+
+    .offers-content {
+        flex-direction: column;
+    }
+
+    .main-offer,
+    .secondary-offers {
+        max-width: 100%;
+    }
+
+    .main-offer img {
+        height: 300px;
+        /* Altura menor em telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .secondary-offers {
+        grid-template-columns: 1fr;
+    }
+}
+
+form {
+    position: relative;
+    z-index: 3;
+    background-color: var(--bg-secondary);
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+}
